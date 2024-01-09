@@ -1,7 +1,75 @@
-body {
-    background-image: url('./assets/kanye-bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300&display=swap");
 
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #4b3131cf;
+  background: url('./assets/kanye-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: "Bebas Neue";
+  font-size: 100px;
+  color: #ff8400;
+}
+
+#main h1:hover {
+  color: black;
+  transition: color ease-in 0.3s;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 30px;
+  font-family: "Quicksand";
+  padding: 10px;
+  border: none;
+  color: #ff8400;
+}
+
+#info-div {
+  background-color: black;
+  text-align: center;
+  padding: 50px;
+}
+
+#info-div p {
+  font-size: 30px;
+  font-family: "Quicksand";
+  padding: 10px;
+  border: none;
+  color: #ff8400;
+}
+
+footer {
+  background-color: black;
+  padding: 5px;
+  font-size: 25px;
+  font-family: "Bebas Neue";
+  text-align: center;
+  max-width: 100%;
+  color: #ff8400;
+}
+
+footer a {
+  color:#ff8400;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #6a3803;
+  transition: color ease-in 0.3s;
+}
