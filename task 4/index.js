@@ -8,19 +8,21 @@ const path = require("path");
 const port = process.env.PORT || 8000;
 const app = express();
 
+const authMiddleware = require('./middlewares/authMiddleware')
 const rootRoutes = require('./routes/root')
-const authRoutes = require("./routes/auth");
 const secureRoutes = require("./routes/secure");
+
+app.set('view engine', 'ejs')
+app.use(express.static("public"));
+
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use("/", express.static(path.join(__dirname, "public")));
 app.use('/', rootRoutes)
-app.use('/auth', authRoutes)
-// app.use('/secure', secureRoutes)
+app.use('/secure', authMiddleware, secureRoutes)
 
 
 app.listen(port, () => {
